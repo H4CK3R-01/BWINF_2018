@@ -1,4 +1,4 @@
-# BWINF-Auf-Und-Ab
+# BWINF-2018
 Dieses Projekt enthält die Programme Auf-Und-Ab sowie Twist vom "BWINF 2018" Informatik-Wettbewerb.
 
 * Auf-Und-Ab ist ein Programm zum simulieren des 'Leiterchen-Spiels'
