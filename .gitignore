@@ -2,3 +2,5 @@
 misc.xml
 modules.xml
 vcs.xml
+out/
+.idea/
