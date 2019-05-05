@@ -22,7 +22,7 @@ public class Console extends Thread {
 		console.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		console.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent evt) {
-				UI.konsole.setText("Konsole öffnen");
+				UI.konsole.setText("Konsole Ã¶ffnen");
 				console.setVisible(false);
 			}
 		});
@@ -30,9 +30,9 @@ public class Console extends Thread {
 	}
 
 	/**
-	 * Methode um den Text der Konsole zu ändern
+	 * Methode um den Text der Konsole zu Ã¤ndern
 	 * 
-	 * @param text Text der hinzugefügt werden soll
+	 * @param text Text der hinzugefÃ¼gt werden soll
 	 */
 	public void setText(String text) {
 		consoleArea.setText(consoleArea.getText() + text + " \n");

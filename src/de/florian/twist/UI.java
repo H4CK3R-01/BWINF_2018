@@ -39,13 +39,13 @@ public class UI extends Thread {
 		menu = new JMenuBar();
 
 		file = new JMenu("Datei");
-		switchWordList = new JMenu("Wortliste ändern");
-		konsole = new JMenuItem("Konsole öffnen");
+		switchWordList = new JMenu("Wortliste Ã¤ndern");
+		konsole = new JMenuItem("Konsole Ã¶ffnen");
 		exit = new JMenuItem("Beenden");
 
 		run = new JMenu("Starten");
-		decrypt = new JMenuItem("Entschlüsseln");
-		encrypt = new JMenuItem("Verschlüsseln");
+		decrypt = new JMenuItem("EntschlÃ¼sseln");
+		encrypt = new JMenuItem("VerschlÃ¼sseln");
 
 		settingsIcon = new ImageIcon(getClass().getClassLoader().getResource("img/icon_settings.png"));
 		exitIcon = new ImageIcon(getClass().getClassLoader().getResource("img/icon_exit.png"));
@@ -77,10 +77,10 @@ public class UI extends Thread {
 		mainFrame.setLocationRelativeTo(null); // Position des Fensters wird festgelegt (Mitte)
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainFrame.setIconImage(new ImageIcon(getClass().getClassLoader().getResource("img/Twist.png")).getImage()); // Icon des Fensters festlegen
-		mainFrame.getContentPane().add(mainPanel, BorderLayout.CENTER); // Tabpane zum Fenster hinzufügen
+		mainFrame.getContentPane().add(mainPanel, BorderLayout.CENTER); // Tabpane zum Fenster hinzufï¿½gen
 		mainFrame.setVisible(true); // Fenster ist sichtbar
 
-		// Menü zusammensetzen
+		// Menï¿½ zusammensetzen
 		File f = new File(getClass().getClassLoader().getResource("wordlist/").getFile());
 		File[] fileArray = f.listFiles();
 		wordlists = new JRadioButtonMenuItem[fileArray.length];
@@ -122,13 +122,13 @@ public class UI extends Thread {
 
 		// Text Panel konfigurieren
 		textDecryptedLabel.setFont(new Font("Courier", Font.PLAIN, 20));
-		textDecryptedLabel.setText("Verschlüsselter Text ");
+		textDecryptedLabel.setText("VerschlÃ¼sselter Text ");
 		textDecrypted.setLineWrap(true);
 		textDecrypted.setWrapStyleWord(true);
 		textDecrypted.setFont(new Font("Courier", Font.PLAIN, 17));
 		textDecryptedScrollPane.setViewportView(textDecrypted);
 		textEncryptedLabel.setFont(new Font("Courier", Font.PLAIN, 20));
-		textEncryptedLabel.setText("Entschlüsselter Text ");
+		textEncryptedLabel.setText("EntschlÃ¼sselter Text ");
 		textEncrypted.setLineWrap(true);
 		textEncrypted.setWrapStyleWord(true);
 		textEncrypted.setFont(new Font("Courier", Font.PLAIN, 17));
@@ -141,10 +141,10 @@ public class UI extends Thread {
 	}
 
 	/**
-	 * Methode um Objekte zur GUI hinzuzufügen
+	 * Methode um Objekte zur GUI hinzuzufÃ¼gen
 	 * 
-	 * @param component  Objekt, das hinzugefügt werden soll
-	 * @param panel      Panel zu dem das Objekt hinzugefügt wird
+	 * @param component  Objekt, das hinzugefÃ¼gt werden soll
+	 * @param panel      Panel zu dem das Objekt hinzugefÃ¼gt wird
 	 */
 	private void addGB(Component component, JPanel panel, int gridwidth, int gridheight, int fill, double weightx, double weighty, int anchor, Insets insets, int ipadx, int ipady) {
 		GridBagConstraints constraints = new GridBagConstraints();
@@ -166,7 +166,7 @@ public class UI extends Thread {
 		public void actionPerformed(ActionEvent e) {
 			for (int i = 0; i < UI.wordlists.length; i++) {
 				if (e.getSource() == UI.wordlists[i]) {
-					Main.console.setText("[ " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy kk:mm:ss")) + " ] Wortliste geändert. Neue Wortliste: " + UI.wordlists[i].getText());
+					Main.console.setText("[ " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy kk:mm:ss")) + " ] Wortliste geÃ¤ndert. Neue Wortliste: " + UI.wordlists[i].getText());
 					Main.wordList = Main.readWordListFile(getClass().getClassLoader().getResource("wordlist/").getFile() + UI.wordlists[i].getText());
 					System.out.println(Main.wordList.size());
 				}
@@ -181,10 +181,10 @@ public class UI extends Thread {
 			} else if (e.getSource() == UI.konsole) {
 				if (Console.console.isVisible()) {
 					Console.console.setVisible(false);
-					UI.konsole.setText("Konsole öffnen");
+					UI.konsole.setText("Konsole Ã¶ffnen");
 				} else {
 					Console.console.setVisible(true);
-					UI.konsole.setText("Konsole schließen");
+					UI.konsole.setText("Konsole schlieÃŸen");
 				}
 			} else if (e.getSource() == UI.decrypt) {
 				new DecryptEncryptStart("decrypt").start();
@@ -196,8 +196,8 @@ public class UI extends Thread {
 	};
 
 	/**
-	 * Methode um den Text im verschlüsselten Textfeld zu ändern
-	 * @param text String der hinzugefügt wird
+	 * Methode um den Text im verschlÃ¼sselten Textfeld zu Ã¤ndern
+	 * @param text String der hinzugefÃ¼gt wird
 	 */
 	public static void setDecryptText(String text) {
 		textDecrypted.setText(textDecrypted.getText() + text + " ");
@@ -205,8 +205,8 @@ public class UI extends Thread {
 
 
 	/**
-	 * Methode um den Text im entschlüsselten Textfeld zu ändern
-	 * @param text String der hinzugefügt wird
+	 * Methode um den Text im entschlÃ¼sselten Textfeld zu Ã¤ndern
+	 * @param text String der hinzugefÃ¼gt wird
 	 */
 	public static void setEncryptText(String text) {
 		textEncrypted.setText(textEncrypted.getText() + text + " ");
